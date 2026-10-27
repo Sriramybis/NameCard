@@ -1,9 +1,10 @@
 * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 
-html, body { height: 100%; }
+html { height: 100%; }
 
 body {
   margin: 0;
+  min-height: 100%;
   display: flex;
   flex-direction: column;
   background: linear-gradient(180deg, #0f62fe 0%, #0043ce 100%);
@@ -73,7 +74,17 @@ button {
 button:active { background: #0043ce; }
 
 /* Keep the layout phone-shaped (430px wide) when previewed on a desktop browser */
-@media (min-width: 500px) {
+@media (min-width: 600px) {
   body { align-items: center; }
-  .card { width: 430px; max-height: 932px; flex: none; height: 880px; }
+  .card { width: 430px; flex: none; min-height: 880px; }
 }
+
+.qr { margin-top: 20px; text-align: center; }
+.qr[hidden] { display: none; }
+.qr img { background: #fff; border: 1px solid #e5e7eb; border-radius: 14px; padding: 8px; }
+.qr p { margin: 8px 0 0; font-size: 13px; color: #57606a; }
+
+.actions { margin-top: auto; padding-top: 20px; width: 100%; display: flex; flex-direction: column; gap: 10px; }
+.actions button { margin-top: 0; }
+button.secondary { background: #e8f0ff; color: #0f62fe; }
+button.secondary:active { background: #d0e2ff; }

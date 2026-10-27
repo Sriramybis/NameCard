@@ -25,7 +25,15 @@
       <li><a id="linkedin" href="https://www.linkedin.com/in/mythili-sekar-sriram/" target="_blank" rel="noopener"><span class="label">LinkedIn</span>mythili-sekar-sriram</a></li>
     </ul>
 
-    <button id="save" type="button">Save to Contacts</button>
+    <div id="qr" class="qr" hidden>
+      <img src="assets/qr.svg" alt="QR code containing Sriram's contact details" width="220" height="220">
+      <p>Scan with a phone camera to add my contact</p>
+    </div>
+
+    <div class="actions">
+      <button id="show-qr" type="button" class="secondary" aria-expanded="false" aria-controls="qr">Show QR Code</button>
+      <button id="save" type="button">Save to Contacts</button>
+    </div>
   </main>
   <script src="app.js"></script>
 </body>

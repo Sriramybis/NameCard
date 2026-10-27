@@ -19,6 +19,13 @@ document.getElementById("save").addEventListener("click", () => {
   URL.revokeObjectURL(url);
 });
 
+document.getElementById("show-qr").addEventListener("click", (e) => {
+  const qr = document.getElementById("qr");
+  qr.hidden = !qr.hidden;
+  e.target.textContent = qr.hidden ? "Show QR Code" : "Hide QR Code";
+  e.target.setAttribute("aria-expanded", String(!qr.hidden));
+});
+
 if ("serviceWorker" in navigator) {
   navigator.serviceWorker.register("sw.js").catch(() => {});
 }
